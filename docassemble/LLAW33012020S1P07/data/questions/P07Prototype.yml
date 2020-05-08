@@ -36,10 +36,12 @@ code: |
 ---
 #this is the end screen for adult patient non emergency
 mandatory: true
-Question: Finish of the app
+Question: Consent recommendation
 subquestion: |
-  It is recommended that you **${ final }**
-  Thank you for using this consent app
+  It is recommended that you **${ final }**.
+  
+  
+  Thank you for using this consent app.
 buttons:
   - "Restart": restart
   - "Exit": exit
@@ -78,7 +80,7 @@ yesno: APNOACDdecision_maker
 question: Advance Care Directive 
 subquestion: |
   Does the patient have an Advance Care Directive with **relevant instructions**?
-#The section above in bold is how it is phrased in the legislation, but perhaps we want to rephrase it to something more layman?
+
 yesno: APNOACDinstructions
 ---
 #Adult patient, determining if a person responsible can be contacted
