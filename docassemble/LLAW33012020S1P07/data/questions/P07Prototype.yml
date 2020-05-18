@@ -3,11 +3,12 @@
 mandatory: True
 question: Welcome to the SAAS consent application
 subquestion: |
-  This application will direct you through the pathways of consent and suggest the most appropriate action based on your input.
+  
+  This application will direct you through the pathways of medical consent and suggest appropriate action based on your input.
 
-  Aspects of this application are based on the assumption that paramedics are considered medical practitioners. The application will inform you when this distinction is important.
+  Parts of this application rely on the assumption that paramedics are considered to be medical practitioners. This application will inform you when this distinction is important.
 
-  The application's advice is not legal advice, by clicking continue you are agreeing not to treat it as such.
+  The advice provided by this application is **not** legal advice. By clicking continue, you are agreeing not to treat it as such.
 buttons:
   - "I accept and want to continue": continue
   - "I do not accept": exit
@@ -16,22 +17,34 @@ buttons:
 
 mandatory: true
 code: |
-  if APNOdecision.any_true():
-    if APNOdelay:
-      final = 'delay the treatment'
-    else: 
-      if APNOACDdecision_maker:
-        final = 'seek the substitute decision makers consent'
-      else: 
-        if APNOACDinstructions:
-          final = 'follow the instructions set forth in the patients Advance Care Directive'
-        else: 
-          if APNOperson_responsible.any_true():
-            final = 'seek the consent of the person responsible'
-          else: 
-            final = 'administer treatment to the patient'
+  if APNOage:
+    final = 'Add all of the child code here'
   else:
-    final = 'seek the patients consent'
+    if APNOrefuse:
+      final = 'Does the patient appear to have a mental illness stuff here.'
+    else:
+      if APNOdecision.any_true():
+        if APNOnecessary:
+          final = 'Implement adult necessity stuff here'
+        else:
+          if APNOmentill:
+            final = 'add questions about mental illness here'
+          else:
+            if APNOdelay:
+              final = 'delay the treatment'
+            else: 
+              if APNOACDdecision_maker:
+                final = 'seek the substitute decision makers consent'
+              else: 
+                if APNOACDinstructions:
+                  final = 'follow the instructions set forth in the patients Advance Care Directive'
+                else: 
+                  if APNOperson_responsible.any_true():
+                    final = 'seek the consent of the person responsible'
+                  else: 
+                    final = 'administer treatment to the patient'
+      else:
+        final = 'seek the patients consent'    
 
 ---
 #this is the end screen for adult patient non emergency
@@ -45,6 +58,14 @@ subquestion: |
 buttons:
   - "Restart": restart
   - "Exit": exit
+---
+#determining age
+question: Is the patient under the age of 16?
+yesno: APNOage
+---
+#has the patient previous refused treatment
+question: Has the patient previously refused treatment?
+yesno: APNOrefuse
 ---
 #adult patient, determining if their decision making ability is impaired.
 #not an emergency
@@ -61,6 +82,14 @@ Fields:
       - The patent is** incapable of using the information** in making the decision
       - The patient is **incapable of communicating** their decision
       - The patient is **comatose or otherwise unconscious**
+---
+#Asking if it is necessary, links with Bens code here
+question: Is the treatment necessary to preserve life, health or well-being of the patient?
+yesno: APNOnecessary
+---
+#Asking if they have a mental illness
+question: Does the patient appear to have a mental illness?
+yesno: APNOmentill
 ---
 #Adult patient, determining if decision can be delayed
 #not an emergency
