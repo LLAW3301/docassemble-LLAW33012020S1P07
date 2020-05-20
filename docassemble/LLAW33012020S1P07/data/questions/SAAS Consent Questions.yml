@@ -1,0 +1,125 @@
+---
+question: Is the patient under the age of 16?
+noyes: PatientAge
+---
+question: Is the decision making ability of the patient impaired?
+Subquestion: |
+  Please select any of the following if they apply to the patient:
+Fields: 
+  - no label: APNOdecision
+    datatype: checkboxes
+    choices:
+      - The patient is **incapable of understanding information** relevant to the decision, including consequences of the decision (not information of a techincal or trivial nature)
+      - The patient is **incapable of retaining information** for at least a short amount of time
+      - The patent is** incapable of using the information** in making the decision
+      - The patient is **incapable of communicating** their decision
+      - The patient is **comatose or otherwise unconscious**
+---
+question: Can the decision be delayed until the patient regains decision-making capacity?
+yesno: APNOdelay
+---
+question: Advance Care Directive 
+subquestion: |
+  Does the patient have an Advance Care Directive appointing a Substitute Decision-Maker?
+  
+  *EG: Medical Agent or Enduring Guardian*
+yesno: APNOACDdecision_maker
+---
+question: Advance Care Directive 
+subquestion: |
+  Does the patient have an Advance Care Directive with **relevant instructions**?
+yesno: APNOACDinstructions
+---
+question: Is there a *Person Responsible* that can be contacted?
+subquestion: |
+  A *Person Responsible* is defined by the following list, select any that are available:
+fields:
+  - no label: APNOperson_responsible
+    datatype: checkboxes 
+    choices: 
+      - Guardian
+      - Spouse/Domestic Partner
+      - Family member by blood or marriage or adoption 
+      - Adult friend
+      - Adult charged with overseeing the day-to-day care of the person
+---
+question: Does the patient consent to treatment?
+yesno: MHConsent
+---
+question: Does the patient appear to have a mental illness?
+subquestion: |
+  *A mental illness is an illness or disorder of the mind*.
+  
+  What does NOT constitute a mental illness:
+
+  - Political opinion or belief 
+  - Religious opinion or belief 
+  - Philosophy
+  - Sexual preference or sexual orientation 
+  - Political, religious, sexual activity or sexual promiscuity 
+  - Immoral conduct 
+  - Development disability of mind
+  - Alcohol or drug intake 
+  - Anti-social behaviour 
+  - Economic or social status
+  - Membership of a particular cultural or racial group
+
+  NOTE: Serious or permanent physiological, biochemical or psychological impairment as a result of intake of alcohol or drugs **CAN** be an **INDICATION** of a mental illness.
+  
+  *Mental Health Act 2009 sch 1*
+yesno: MHIllness
+---
+question: Does it  appear that the patient has caused, or is at significant risk of causing, harm to themselves, others or property?
+yesno: MHHarm
+---
+question: Does the patient otherwise require medical treatment?
+yesno: MHRequire
+---
+question: Does the parent or guardian of the child consent to the medical treatment?
+yesno: CPParConsent
+---
+question: Is the medical treatment necessary to preserve the child's life, health or well-being?
+yesno: CPNecessity
+---
+question: Does the child consent to the medical treatment?
+yesno: CPChildConsent
+---
+question: Are you of the opinion that the child is capable of understanding the nature, consequences and risks of the medical treatment?
+yesno: CPRisks
+---
+question: Are you of the opinion that the medical treatment in the best interest of the child's health and well-being?
+yesno: CPInterest
+---
+question: Are those opinions supported by the written opinion of at least one other medical practitioner, who personally examined the child before administering medical treatment?
+yesno: CPSecondOpinion
+---
+question: Is the treatment necessary to preserve the life, health or well-being of the patient? 
+yesno: APEnecessary
+---
+question: Is the patient 18 years or over? 
+noyes: APEover_18
+---
+question: Does time permit a reasonable inquiry into whether the patient has an Advance Care Directive? 
+noyes: APEtime
+---
+question: Does the patient have an Advance Care Directive?  
+noyes: APEadvance_directive
+---
+question: Does the Advance Care Directive appoint a Substitute Decision-Maker who is available to consent to the emergency treatment?
+yesno: APEsubstitute_maker
+---
+question: Do they consent? 
+yesno: APEsubstitute_consent
+---
+question: Is a parent or guardian available to consent to the emergency treatment? 
+yesno: APEparent_guardian
+---
+question: Is a Person Responsible available to consent to the emergency treatment?
+noyes: APEperson_responsible
+---
+question: Is it practical to attain a secondary supporting opinion from a medical practitioner who has personally examined the patient as to the necessity of treatment? 
+noyes: APEsecond_opinion
+---
+question: Does the opinion of the secondary practitioner agree to administer treatment?
+yesno: APEsecondary_agree
+---

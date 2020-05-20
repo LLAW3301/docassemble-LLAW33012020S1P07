@@ -1,0 +1,41 @@
+---
+event: Appemergency
+Question: Consent recommendation
+subquestion: |
+  ${ terminus }  
+under: |
+  Thank you for using the SAAS Consent Adviser.
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+event: Appadult
+Question: Consent recommendation
+subquestion: |
+  ${ final }
+under: |
+  Thank you for using the SAAS Consent Adviser.
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+event: AppMentalHealth
+Question: Consent recommendation
+subquestion: |
+  ${ decisive }
+under: |
+  Thank you for using the SAAS Consent Adviser.
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+event: Appchild
+Question: Consent recommendation
+subquestion: |
+  ${ ultimate }
+under: |
+  Thank you for using the SAAS Consent Adviser.
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
