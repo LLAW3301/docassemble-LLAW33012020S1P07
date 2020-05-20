@@ -1,0 +1,86 @@
+---
+mandatory: True
+code: |
+  if PatientAge and APNOdecision.any_true() and APEnecessary:
+    Appemergency
+  elif PatientAge and APNOdecision.any_true():
+    Appadult
+  elif PatientAge:
+    AppMentalHealth
+  else:
+    Appchild
+---
+code: | 
+  if APNOdelay:
+    final = delay_treatment
+  elif APNOACDdecision_maker:
+    final = sub_decision
+  elif APNOACDinstructions:
+    final = follow_acd
+  elif APNOperson_responsible.any_true():
+    final = responsible_consent
+  elif MHIllness and MHHarm:
+    final = paramedic_can
+  elif MHIllness and MHRequire:
+    final = paramedic_can
+  else: 
+    final = contact_sacat
+---
+code: |
+  if MHConsent:
+    decisive = medical_treatment
+  elif MHIllness and MHHarm:
+    decisive = paramedic_can
+  elif MHIllness and MHRequire:
+    decisive = paramedic_can
+  else: 
+    decisive = no_treatment
+---
+code: |
+  if CPParConsent:
+    ultimate = medical_treatment_parent
+  elif CPNecessity:
+    ultimate = medical_treatment_cpemergency
+  elif CPChildConsent and CPRisks and CPInterest and CPSecondOpinion:
+    ultimate = medical_treatment_child
+  elif MHIllness and MHHarm:
+    ultimate = paramedic_can
+  elif MHIllness and MHRequire:
+    ultimate = paramedic_can
+  else: 
+    ultimate = no_treatment
+---
+code: |
+  if APEover_18 and APEsecond_opinion:
+    terminus = medical_treatment_emergency1
+  elif APEover_18 and APEsecondary_agree:
+   terminus = medical_treatment_emergency2
+  elif APEover_18:
+   terminus = no_treatment
+  elif APEtime and APEsecond_opinion:
+    terminus = medical_treatment_emergency3
+  elif APEtime and APEsecondary_agree:
+    terminus = medical_treatment_emergency4
+  elif APEtime:
+    terminus = no_treatment
+  elif APEadvance_directive and APEsecond_opinion:
+    terminus = medical_treatment_emergency1
+  elif APEadvance_directive and APEsecondary_agree:
+    terminus = medical_treatment_emergency2
+  elif APEadvance_directive:
+    terminus = no_treatment
+  elif APEsubstitute_maker and APEsubstitute_consent:
+    terminus = medical_treatment_emergency5
+  elif APEsubstitute_maker:
+    terminus = no_treatment
+  elif APEparent_guardian and APEsubstitute_consent:
+    terminus = medical_treatment_emergency6
+  elif APEparent_guardian:
+    terminus = no_treatment
+  elif APEperson_responsible:
+    terminus = follow_acd
+  elif APEsubstitute_consent:
+    terminus = medical_treatment_emergency7
+  else:
+    terminus = no_treatment
+---

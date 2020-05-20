@@ -1,0 +1,19 @@
+---
+mandatory: True
+question: Welcome to the SAAS consent application
+subquestion: |
+  This application will direct you through the pathways of consent and suggest the most appropriate action based on your input.
+  
+  Aspects of this application are based on the assumption that paramedics are considered medical practitioners. The application will inform you when this distinction is important.
+  
+  The application's advice is not legal advice, by clicking continue you are agreeing not to treat it as such.
+buttons:
+  - "I accept and want to continue": continue
+  - "I do not accept": exit
+---
+include:
+  - SAAS Consent Ends.yml
+  - SAAS Consent Code.yml
+  - SAAS Consent Questions.yml
+  - SAAS Consent Templates.yml
+---

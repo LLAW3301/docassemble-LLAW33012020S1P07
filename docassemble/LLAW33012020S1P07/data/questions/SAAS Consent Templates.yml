@@ -1,0 +1,128 @@
+---
+template: delay_treatment
+content: |
+  **It is recommended that you delay treatment until the patient regains decision-making capacity.**
+---
+template: sub_decision
+content: |
+  **It is recommended that you seek the substitute decision makers consent.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 14A(2)(a)*
+---
+template: follow_acd
+content: |
+  **It is recommended that you follow the instructions set forth in the patient's Advance Care Directive.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 14A(2)(b)*
+---
+template: responsible_consent
+content: |
+  **It is recommended that you seek the consent of the person responsible.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 14(1)*
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 14B(1)*
+---
+template: contact_sacat
+content: |
+  **It is recommended that you contact SAAS legal department *IF* there is the need to apply to SACAT for consent.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 14(1)*
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 14B(1)*
+---
+template: paramedic_can
+content: |
+  **A paramedic can:**
+  
+  * **detain the patient;** 
+  * **transport the patient from place to place;** 
+  * **restrain the patient or use force as seen reasonable in the circumstances;** 
+  * **restrain the person and otherwise use force to the person as reasonably required in the circumstances;**
+  * **enter and remain in a place where the paramedic reasonably suspects the person may be found; or**
+  * **search the persons clothing or possessions and take possession of anything in the persons possession that the person may use to cause harm to themselves, others, or property**
+  
+  *Mental Health Act 2009 s 56(1)(c)*
+  
+  *Mental Health Act 2009 s 56(3)*
+---
+template: medical_treatment
+content: |
+  **It is recommended that you administer medical treatment.**
+---
+template: medical_treatment_parent
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 12(a)*
+---
+template: medical_treatment_cpemergency
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(5)*
+  
+  *Murray v McMurchy [1949]*
+  
+  *Hunter and New England Area Health Service v A (2009)*
+---
+template: medical_treatment_child
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 12(b)*
+---
+template: medical_treatment_emergency1
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(1)*
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(2)*
+---
+template: medical_treatment_emergency2
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(1)*
+---
+template: medical_treatment_emergency3
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(1)*
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(2)*
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(2a)*
+---
+template: medical_treatment_emergency4
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(1)*
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(2a)*
+---
+template: medical_treatment_emergency5
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(3)*
+---
+template: medical_treatment_emergency6
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(4)*
+---
+template: medical_treatment_emergency7
+content: |
+  **It is recommended that you administer medical treatment.**
+  
+  *Consent to Medical Treatment and Palliative Care Act 1995 s 13(4a)*
+---
+template: no_treatment
+content: |
+  **It is recommended that you do not administer medical treatment.**
+---
