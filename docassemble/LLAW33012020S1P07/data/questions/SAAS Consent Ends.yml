@@ -2,9 +2,11 @@
 event: Appemergency
 Question: Consent recommendation
 subquestion: |
-  ${ terminus }  
-under: |
+  ${ terminus.content } 
+  
   Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ terminus.subject } 
 buttons:
   - "Restart": restart
   - "Exit": exit
@@ -12,9 +14,11 @@ buttons:
 event: Appadult
 Question: Consent recommendation
 subquestion: |
-  ${ final }
-under: |
+  ${ final.content }
+  
   Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ final.subject }
 buttons:
   - "Restart": restart
   - "Exit": exit
@@ -22,9 +26,11 @@ buttons:
 event: AppMentalHealth
 Question: Consent recommendation
 subquestion: |
-  ${ decisive }
-under: |
+  ${ decisive.content }
+
   Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ decisive.subject }
 buttons:
   - "Restart": restart
   - "Exit": exit
@@ -32,9 +38,11 @@ buttons:
 event: Appchild
 Question: Consent recommendation
 subquestion: |
-  ${ ultimate }
-under: |
+  ${ ultimate.content }
+  
   Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ ultimate.subject }
 buttons:
   - "Restart": restart
   - "Exit": exit
