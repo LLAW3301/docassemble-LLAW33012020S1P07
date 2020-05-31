@@ -5,20 +5,20 @@ content: |
 ---
 template: sub_decision
 content: |
-  **It is recommended that you seek the substitute decision makers consent.**
-  
+  **It is recommended that you seek the substitute decision maker's consent.**
+subject: |   
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 14A(2)(a)
 ---
 template: follow_acd
 content: |
   **It is recommended that you follow the instructions set forth in the patient's Advance Care Directive.**
-  
+subject: |   
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 14A(2)(b)
 ---
 template: responsible_consent
 content: |
   **It is recommended that you seek the consent of the person responsible.**
-  
+subject: |   
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 14(1)
   
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 14B(1)
@@ -26,7 +26,7 @@ content: |
 template: contact_sacat
 content: |
   **It is recommended that you contact SAAS legal department *IF* there is the need to apply to SACAT for consent.**
-  
+subject: |   
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 14(1)
   
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 14B(1)
@@ -46,7 +46,7 @@ content: |
   * **enter and remain in a place where the paramedic reasonably suspects the person may be found; or**
   
   * **search the persons clothing or possessions and take possession of anything in the persons possession that the person may use to cause harm to themselves, others, or property**
-  
+subject: |   
   *Mental Health Act 2009* (SA) s 56(1)(c)
   
   *Mental Health Act 2009* (SA) s 56(3)

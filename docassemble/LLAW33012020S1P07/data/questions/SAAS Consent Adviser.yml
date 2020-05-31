@@ -2,9 +2,9 @@
 mandatory: True
 question: Welcome to the SAAS Consent Adviser
 subquestion: |
-  This application will direct you through the pathways of consent and suggest the most appropriate action based on your input.
+  This application will direct you through the pathways of medical consent and suggest the most appropriate action based on your input.
   
-  Parts of this application are based on the assumption that paramedics are considered medical practitioners. The application will inform you when this distinction is important.
+  Parts of this application are based on the assumption that paramedics are considered to be medical practitioners. The application will inform you when this distinction is important.
   
   The application's advice is not legal advice. By clicking continue you are agreeing not to treat it as such.
 buttons:
