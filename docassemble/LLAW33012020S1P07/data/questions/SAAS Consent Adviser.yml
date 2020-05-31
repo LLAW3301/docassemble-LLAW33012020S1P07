@@ -1,12 +1,12 @@
 ---
 mandatory: True
-question: Welcome to the SAAS consent application
+question: Welcome to the SAAS Consent Adviser
 subquestion: |
   This application will direct you through the pathways of consent and suggest the most appropriate action based on your input.
   
-  Aspects of this application are based on the assumption that paramedics are considered medical practitioners. The application will inform you when this distinction is important.
+  Parts of this application are based on the assumption that paramedics are considered medical practitioners. The application will inform you when this distinction is important.
   
-  The application's advice is not legal advice, by clicking continue you are agreeing not to treat it as such.
+  The application's advice is not legal advice. By clicking continue you are agreeing not to treat it as such.
 buttons:
   - "I accept and want to continue": continue
   - "I do not accept": exit
@@ -16,4 +16,31 @@ include:
   - SAAS Consent Code.yml
   - SAAS Consent Questions.yml
   - SAAS Consent Templates.yml
+---
+features: 
+  css: saas_style.css
+  debug: False
+  hide standard menu: True
+---
+metadata:
+  title: SAAS Consent Adviser
+  description: Advice on how to obtain consent for medical treatment
+  authors:
+    - name: Benjamin Alderson
+    - name: Bryce Gassner
+    - name: Luke Hanson
+    - name: Melenie Jessel Gavara-Nanu
+    - name: Samantha Thomas
+---
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: center">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with SAAS
+    </i></small></cite>
+    <div>
+    <div>
 ---

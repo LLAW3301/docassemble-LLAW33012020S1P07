@@ -1,12 +1,16 @@
 ---
 mandatory: True
 code: |
-  if PatientAge and APNOdecision.any_true() and APEnecessary:
+  if PatientAge and medrefuse:
+    AppMentalHealth
+  elif PatientAge and APNOdecision.any_true() and APEnecessary:
     Appemergency
   elif PatientAge and APNOdecision.any_true():
     Appadult
-  elif PatientAge:
+  elif PatientAge and MHConsent:
     AppMentalHealth
+  elif PatientAge:
+    Appconsent
   else:
     Appchild
 ---
@@ -27,9 +31,7 @@ code: |
     final = contact_sacat
 ---
 code: |
-  if MHConsent:
-    decisive = medical_treatment
-  elif MHIllness and MHHarm:
+  if MHIllness and MHHarm:
     decisive = paramedic_can
   elif MHIllness and MHRequire:
     decisive = paramedic_can
@@ -83,4 +85,7 @@ code: |
     terminus = medical_treatment_emergency7
   else:
     terminus = no_treatment
+---
+code: |
+  omega = medical_treatment
 ---
