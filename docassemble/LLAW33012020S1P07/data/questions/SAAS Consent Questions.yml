@@ -2,6 +2,9 @@
 question: Is the patient under the age of 16?
 noyes: PatientAge
 ---
+question: Has the patient previously refused the medical treatment?
+yesno: medrefuse
+---
 question: Is the decision making ability of the patient impaired?
 Subquestion: |
   Please select any of the following if they apply to the patient:
@@ -44,7 +47,7 @@ fields:
       - Adult charged with overseeing the day-to-day care of the person
 ---
 question: Does the patient consent to treatment?
-yesno: MHConsent
+noyes: MHConsent
 ---
 question: Does the patient appear to have a mental illness?
 subquestion: |
@@ -66,7 +69,7 @@ subquestion: |
 
   NOTE: Serious or permanent physiological, biochemical or psychological impairment as a result of intake of alcohol or drugs **CAN** be an **INDICATION** of a mental illness.
   
-  *Mental Health Act 2009 sch 1*
+  *Mental Health Act 2009* sch 1
 yesno: MHIllness
 ---
 question: Does it  appear that the patient has caused, or is at significant risk of causing, harm to themselves, others or property?
@@ -102,7 +105,7 @@ noyes: APEover_18
 question: Does time permit a reasonable inquiry into whether the patient has an Advance Care Directive? 
 noyes: APEtime
 ---
-question: Does the patient have an Advance Care Directive?  
+question: Does the patient have an Advance Care Directive that is intended to apply to the kind of treatment proposed or the current circumstances?  
 noyes: APEadvance_directive
 ---
 question: Does the Advance Care Directive appoint a Substitute Decision-Maker who is available to consent to the emergency treatment?
