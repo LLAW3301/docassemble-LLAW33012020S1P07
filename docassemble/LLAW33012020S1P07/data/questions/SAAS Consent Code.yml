@@ -1,15 +1,15 @@
 ---
 mandatory: True
 code: |
-  if PatientAge and medrefuse:
+  if patient_age > 15 and medrefuse:
     AppMentalHealth
-  elif PatientAge and APNOdecision.any_true() and APEnecessary:
+  elif patient_age > 15 and APNOdecision.any_true() and APEnecessary:
     Appemergency
-  elif PatientAge and APNOdecision.any_true():
+  elif patient_age > 15 and APNOdecision.any_true():
     Appadult
-  elif PatientAge and MHConsent:
+  elif patient_age > 15 and MHConsent:
     AppMentalHealth
-  elif PatientAge:
+  elif patient_age > 15:
     Appconsent
   else:
     Appchild
@@ -53,11 +53,11 @@ code: |
     ultimate = no_treatment
 ---
 code: |
-  if APEover_18 and APEsecond_opinion:
+  if patient_age < 18 and APEsecond_opinion:
     terminus = medical_treatment_emergency1
-  elif APEover_18 and APEsecondary_agree:
+  elif patient_age < 18 and APEsecondary_agree:
    terminus = medical_treatment_emergency2
-  elif APEover_18:
+  elif patient_age < 18:
    terminus = no_treatment
   elif APEtime and APEsecond_opinion:
     terminus = medical_treatment_emergency3

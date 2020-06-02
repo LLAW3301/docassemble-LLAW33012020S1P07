@@ -1,4 +1,10 @@
 ---
+question: |
+  How many years old is the Patient?
+fields: 
+  - Age: patient_age
+    datatype: integer
+---
 question: Is the patient under the age of 16?
 noyes: PatientAge
 ---
