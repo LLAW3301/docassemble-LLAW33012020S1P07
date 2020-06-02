@@ -1,4 +1,14 @@
 ---
+metadata:
+  title: SAAS Consent Adviser
+  description: Advice on how to obtain consent for medical treatment
+  authors:
+    - name: Benjamin Alderson
+    - name: Bryce Gassner
+    - name: Luke Hanson
+    - name: Melenie Jessel Gavara-Nanu
+    - name: Samantha Thomas
+---
 mandatory: True
 question: Welcome to the SAAS Consent Adviser
 subquestion: |
@@ -22,17 +32,7 @@ features:
   debug: False
   hide standard menu: True
 ---
-metadata:
-  title: SAAS Consent Adviser
-  description: Advice on how to obtain consent for medical treatment
-  authors:
-    - name: Benjamin Alderson
-    - name: Bryce Gassner
-    - name: Luke Hanson
-    - name: Melenie Jessel Gavara-Nanu
-    - name: Samantha Thomas
----
-default screen parts:
+default screen parts: 
   post: |
     <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
     <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
