@@ -9,6 +9,13 @@ metadata:
     - name: Melenie Jessel Gavara-Nanu
     - name: Samantha Thomas
 ---
+objects:
+  - SAAS_logo: DAStaticFile.using(filename='SAhealth.png')
+---
+mandatory: True
+code: |
+  set_parts(title='SAAS Consent Adviser', logo='<img src="' + SAAS_logo.url_for() + '" style="height: 65px;">')
+---
 mandatory: True
 question: Welcome to the SAAS Consent Adviser
 subquestion: |

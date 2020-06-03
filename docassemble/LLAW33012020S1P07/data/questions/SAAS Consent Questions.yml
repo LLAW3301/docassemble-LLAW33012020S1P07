@@ -1,3 +1,9 @@
+question: What is the patient's age?
+field: Patient_age
+choices:
+  - 15 or under
+  - 16 or 17
+  - 18 or over
 ---
 question: |
   How many years old is the Patient?

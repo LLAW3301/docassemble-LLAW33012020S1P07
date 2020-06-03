@@ -1,15 +1,25 @@
 ---
 mandatory: True
 code: |
-  if patient_age > 15 and medrefuse:
+  if Patient_age == '16 or 17' and medrefuse:
     AppMentalHealth
-  elif patient_age > 15 and APNOdecision.any_true() and APEnecessary:
+  elif Patient_age == '18 or over' and medrefuse:
+    AppMentalHealth
+  elif Patient_age == '16 or 17' and APNOdecision.any_true() and APEnecessary:
     Appemergency
-  elif patient_age > 15 and APNOdecision.any_true():
+  elif Patient_age == '18 or over' and APNOdecision.any_true() and APEnecessary:
+    Appemergency
+  elif Patient_age == '16 or 17' and APNOdecision.any_true():
     Appadult
-  elif patient_age > 15 and MHConsent:
+  elif Patient_age == '18 or over' and APNOdecision.any_true():
+    Appadult
+  elif Patient_age == '16 or 17' and MHConsent:
     AppMentalHealth
-  elif patient_age > 15:
+  elif Patient_age == '18 or over' and MHConsent:
+    AppMentalHealth
+  elif Patient_age == '16 or 17':
+    Appconsent
+  elif Patient_age == '18 or over':
     Appconsent
   else:
     Appchild
@@ -53,11 +63,11 @@ code: |
     ultimate = no_treatment
 ---
 code: |
-  if patient_age < 18 and APEsecond_opinion:
+  if Patient_age == '16 or 17' and APEsecond_opinion:
     terminus = medical_treatment_emergency1
-  elif patient_age < 18 and APEsecondary_agree:
+  elif Patient_age == '16 or 17' and APEsecondary_agree:
    terminus = medical_treatment_emergency2
-  elif patient_age < 18:
+  elif Patient_age == '16 or 17':
    terminus = no_treatment
   elif APEtime and APEsecond_opinion:
     terminus = medical_treatment_emergency3
