@@ -1,7 +1,7 @@
 ---
 metadata:
   title: SAAS Consent Adviser
-  description: Advice on how to obtain consent for medical treatment
+  description: Advice for paramedics on how to obtain consent for medical treatment
   authors:
     - name: Benjamin Alderson
     - name: Bryce Gassner
@@ -9,6 +9,7 @@ metadata:
     - name: Melenie Jessel Gavara-Nanu
     - name: Samantha Thomas
 ---
+# The following two blocks set the SA Health and SAAS logos at the top left of the screen. 
 objects:
   - SAAS_logo: DAStaticFile.using(filename='SAhealth.png')
 ---
@@ -16,6 +17,7 @@ mandatory: True
 code: |
   set_parts(title='SAAS Consent Adviser', logo='<img src="' + SAAS_logo.url_for() + '" style="height: 65px;">')
 ---
+# The initial screen of the application displays a welcome, explanation and disclaimer.
 mandatory: True
 question: Welcome to the SAAS Consent Adviser
 subquestion: |
@@ -28,17 +30,20 @@ buttons:
   - "I accept and want to continue": continue
   - "I do not accept": exit
 ---
+# The files containing the endpoints, code blocks, question blocks and templates, respectively.
 include:
   - SAAS Consent Ends.yml
   - SAAS Consent Code.yml
   - SAAS Consent Questions.yml
   - SAAS Consent Templates.yml
 ---
+# Sets the CSS and disables unnecessary features.
 features: 
   css: saas_style.css
   debug: False
   hide standard menu: True
 ---
+# Sets the Flinders University attribution and logo at the bottom of the screen.
 default screen parts: 
   post: |
     <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">

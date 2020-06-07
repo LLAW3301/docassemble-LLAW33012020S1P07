@@ -1,4 +1,6 @@
 ---
+# The endpoints all use different mako that change depending on the answers given to the application. The mako in each endpoint is divided into 'content', which provides the recommendation, and 'subject', which references the relevant law. The 'subject' appears under any relevant buttons.
+# This is the endpoint for the 'emergency' section of the application.
 event: Appemergency
 Question: Consent Recommendation
 subquestion: |
@@ -11,6 +13,7 @@ buttons:
   - "Restart": restart
   - "Exit": exit
 ---
+# This is the endpoint for the 'adult' section of the application.
 event: Appadult
 Question: Consent Recommendation
 subquestion: |
@@ -23,6 +26,7 @@ buttons:
   - "Restart": restart
   - "Exit": exit
 ---
+# This is the endpoint for the 'mental health' section of the application.
 event: AppMentalHealth
 Question: Consent Recommendation
 subquestion: |
@@ -35,6 +39,7 @@ buttons:
   - "Restart": restart
   - "Exit": exit
 ---
+# This is the endpoint for the 'child' section of the application.
 event: Appchild
 Question: Consent Recommendation
 subquestion: |
@@ -43,18 +48,6 @@ subquestion: |
   Thank you for using the SAAS Consent Adviser.
 under: |
   ${ ultimate.subject }
-buttons:
-  - "Restart": restart
-  - "Exit": exit
----
-event: Appconsent
-Question: Consent Recommendation
-subquestion: |
-  ${ omega.content }
-  
-  Thank you for using the SAAS Consent Adviser.
-under: |
-  ${ omega.subject }
 buttons:
   - "Restart": restart
   - "Exit": exit
