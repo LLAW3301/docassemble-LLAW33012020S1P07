@@ -1,0 +1,139 @@
+question: What is the patient's age?
+field: Patient_age
+choices:
+  - 15 or under
+  - 16 or 17
+  - 18 or over
+---
+question: |
+  How many years old is the Patient?
+fields: 
+  - Age: patient_age
+    datatype: integer
+---
+question: Is the patient under the age of 16?
+noyes: PatientAge
+---
+question: Has the patient previously refused the medical treatment?
+noyes: medrefuse
+---
+question: Is the decision making ability of the patient impaired?
+Subquestion: |
+  Please select any of the following if they apply to the patient:
+Fields: 
+  - no label: APNOdecision
+    datatype: checkboxes
+    choices:
+      - The patient is **incapable of understanding information** relevant to the decision, including consequences of the decision (not information of a techincal or trivial nature)
+      - The patient is **incapable of retaining the relevant information** for at least a short amount of time
+      - The patent is **incapable of using the relevant information** in making the decision
+      - The patient is **incapable of communicating** their decision
+      - The patient is **comatose or otherwise unconscious**
+under: |
+  *Consent to Medical Treatment and Palliative Care Act 1995* s 4(2)
+---
+question: Can the decision be delayed until the patient regains decision-making capacity?
+yesno: APNOdelay
+---
+question: Does the patient have an advance care directive that appoints a substitute decision-maker who is authorised to make decisions about the kind of medical treatment proposed? 
+subquestion: |  
+  *eg. A medical agent or enduring guardian*
+yesno: APNOACDdecision_maker
+---
+question: Does the patient have an advance care directive with instructions relevant to the kind of medical treatment proposed?
+yesno: APNOACDinstructions
+---
+question: Is there a *Person Responsible* that can be contacted?
+subquestion: |
+  A *Person Responsible* is defined by the following list, select any that are available:
+fields:
+  - no label: APNOperson_responsible
+    datatype: checkboxes 
+    choices: 
+      - Guardian
+      - Spouse/Adult Domestic Partner
+      - Adult family member by blood, marriage or adoption 
+      - Adult friend
+      - Adult charged with overseeing the day-to-day care of the person
+      - Adult of Aboriginal or Torres Strait Islander descent, related to the patient according to Aboriginal or Torres Strait Islander kinship rules 
+---
+question: Does the patient consent to the medical treatment?
+yesno: MHConsent
+---
+question: Does the patient appear to have a mental illness?
+subquestion: |
+  *A mental illness is an illness or disorder of the mind*.
+  
+  What does NOT constitute a mental illness:
+
+  - Political opinion or belief 
+  - Religious opinion or belief 
+  - Philosophy
+  - Sexual preference or sexual orientation 
+  - Political, religious, sexual activity or sexual promiscuity 
+  - Immoral conduct 
+  - Developmental disability of mind
+  - Alcohol or drug intake 
+  - Anti-social behaviour 
+  - Economic or social status
+  - Membership of a particular cultural or racial group
+
+  NOTE: Serious or permanent physiological, biochemical or psychological impairment as a result of intake of alcohol or drugs **CAN** be an **INDICATION** of a mental illness.
+yesno: MHIllness
+under: |
+  *Mental Health Act 2009* sch 1
+---
+question: Does it  appear that the patient has caused, or is at significant risk of causing, harm to themselves, others or property?
+yesno: MHHarm
+---
+question: Does the patient otherwise require medical treatment?
+yesno: MHRequire
+---
+question: Does the parent or guardian of the child consent to the medical treatment?
+yesno: CPParConsent
+---
+question: Is the medical treatment necessary to preserve the child's life, health or well-being?
+yesno: CPNecessity
+---
+question: Does the child consent to the medical treatment?
+yesno: CPChildConsent
+---
+question: Are you of the opinion that the child is capable of understanding the nature, consequences and risks of the medical treatment?
+yesno: CPRisks
+---
+question: Are you of the opinion that the medical treatment in the best interest of the child's health and well-being?
+yesno: CPInterest
+---
+question: Are those opinions supported by the written opinion of at least one other medical practitioner, who personally examined the child before administering medical treatment?
+yesno: CPSecondOpinion
+---
+question: Is the medical treatment necessary to preserve the life, health or well-being of the patient? 
+yesno: APEnecessary
+---
+question: Is the patient under the age of 18? 
+yesno: APEover_18
+---
+question: Does time permit a reasonable inquiry into whether the patient has an advance care directive? 
+noyes: APEtime
+---
+question: Does the patient have an advance care directive that is intended to apply to the kind of treatment proposed or the current circumstances?  
+noyes: APEadvance_directive
+---
+question: Does the advance care directive appoint a substitute decision-maker, who is authorised to make decisions about the kind of medical treatment proposed and available to consent to the emergency treatment?
+yesno: APEsubstitute_maker
+---
+question: Do they consent? 
+yesno: APEsubstitute_consent
+---
+question: Is a parent or guardian available to consent to the emergency treatment? 
+yesno: APEparent_guardian
+---
+question: Is a Person Responsible available to consent to the emergency treatment?
+noyes: APEperson_responsible
+---
+question: Is it practical to attain a secondary supporting opinion from a medical practitioner who has personally examined the patient as to the necessity of treatment? 
+noyes: APEsecond_opinion
+---
+question: Does the opinion of the secondary practitioner agree to administer treatment?
+yesno: APEsecondary_agree
+---

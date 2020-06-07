@@ -1,0 +1,36 @@
+---
+mandatory: true
+Question: Consent recommendation
+subquestion: |
+  **${ final }**.
+    
+  Thank you for using this consent app.
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+question: Does the patient consent to treatment?
+yesno: MHConsent
+---
+question: Does the patient appear to have a mental illness?
+subquestion: A mental illness is an illness or disorder of the mind.
+noyes: MHIllness
+---
+question: Does it  appear that the patient has a mental illness **AND** has caused, or there is a significant risk of causing harm to themselves, others or property?
+yesno: MHHarm
+---
+question: Does the patient otherwise require medical treatment?
+yesno: MHRequire
+---
+code: |
+  if MHConsent:
+    final = 'It is recommended that you administer medical treatment'
+  elif MHIllness:
+    final = 'It is recommended that you do not administer medical treatment'
+  elif MHHarm:
+    final = 'Paramedic can detain the patient, transport the patient from place to place, restrain the patient or use force as seen reasonable in the circumstances, restrain the person and otherwise use force to the person as "reasonably required" in the circumstances, enter and remain in a place where the paramedic "reasonably suspects" the person may be found, search the persons clothing or possessions and take possession of anything in the persons possession that the person may use to cause harm to: a) themselves, b) others or c) property'
+  elif MHRequire:
+    final = 'Paramedic can detain the patient, transport the patient from place to place, restrain the patient or use force as seen reasonable in the circumstances, restrain the person and otherwise use force to the person as "reasonably required" in the circumstances, enter and remain in a place where the paramedic "reasonably suspects" the person may be found, search the persons clothing or possessions and take possession of anything in the persons possession that the person may use to cause harm to: a) themselves, b) others or c) property'
+  else: 
+    final = 'It is recommended that you do not administer medical treatment'
+---

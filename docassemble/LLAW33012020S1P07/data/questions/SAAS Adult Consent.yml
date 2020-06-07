@@ -1,0 +1,98 @@
+---
+#welcome screen with disclaimer
+mandatory: True
+question: Welcome to the SAAS consent application
+subquestion: |
+  This application will direct you through the pathways of consent and suggest the most appropriate action based on your input.
+  Aspects of this application are based on the assumption that paramedics are considered medical practitioners. The application will inform you when this distinction is important.
+  The application's advice is not legal advice, by clicking continue you are agreeing not to treat it as such.
+buttons:
+  - "I accept and want to continue": continue
+  - "I do not accept": exit
+---
+#these are the if statements for and Adult Patient in a non-emergency.
+
+mandatory: true
+code: |
+  if APNOdecision.any_true():
+    if APNOdelay:
+      final = 'delay the treatment'
+    else: 
+      if APNOACDdecision_maker:
+        final = 'seek the substitute decision makers consent'
+      else: 
+        if APNOACDinstructions:
+          final = 'follow the instructions set forth in the patients Advance Care Directive'
+        else: 
+          if APNOperson_responsible.any_true():
+            final = 'seek the consent of the person responsible'
+          else: 
+            final = 'administer treatment to the patient'
+  else:
+    final = 'seek the patients consent'
+---
+#this is the end screen for adult patient non emergency
+mandatory: true
+Question: Consent recommendation
+subquestion: |
+  It is recommended that you **${ final }**.
+  
+  
+  Thank you for using this consent app.
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+#adult patient, determining if their decision making ability is impaired.
+#not an emergency
+#the prefix of each field is represented by Adult Patient (AP), NO emergency (NO), followed by something relevant to the question. Hence APNOdecision/APNOdelay/APNOACDdecision.
+question: Is the decision making ability of the patient impaired?
+Subquestion: |
+  Please select any of the following if they apply to the patient:
+Fields: 
+  - no label: APNOdecision
+    datatype: checkboxes
+    choices:
+      - The patient is **incapable of understanding information** relevant to the decision, including consequences of the decision (not information of a techincal or trivial nature)
+      - The patient is **incapable of retaining information** for at least a short amount of time
+      - The patent is** incapable of using the information** in making the decision
+      - The patient is **incapable of communicating** their decision
+      - The patient is **comatose or otherwise unconscious**
+---
+#Adult patient, determining if decision can be delayed
+#not an emergency
+question: Can the decision be delayed until the patient regains decision-making capacity?
+yesno: APNOdelay
+---
+#Adult patient, determining if the patient has an ACD with substitute decision maker
+#not an emergency
+question: Advance Care Directive 
+subquestion: |
+  Does the patient have an Advance Care Directive appointing a Substitute Decision-Maker?
+  *EG: Medical Agent or Enduring Guardian*
+yesno: APNOACDdecision_maker
+---
+#Adult patient, determining if the patient has an ACD with relevant instructions
+#not an emergency
+question: Advance Care Directive 
+subquestion: |
+  Does the patient have an Advance Care Directive with **relevant instructions**?
+yesno: APNOACDinstructions
+---
+#Adult patient, determining if a person responsible can be contacted
+#not an emergency
+question: Is there a *Person Responsible* that can be contacted?
+subquestion: |
+  A *Person Responsible* is defined by the following list, select any that are available:
+fields:
+  - no label: APNOperson_responsible
+    datatype: checkboxes 
+    choices: 
+      - Guardian
+      - Spouse/Domestic Partner
+      - Family member by blood or marriage or adoption 
+      - Adult friend
+      - Adult charged with overseeing the day-to-day care of the person
+  
+#need to add the defintions of what the above mean (not sure how to do it yet)
+#because they are more detailed in the legislation (like what defines an adult friend)

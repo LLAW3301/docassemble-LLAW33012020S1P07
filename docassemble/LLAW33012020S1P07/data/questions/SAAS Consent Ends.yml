@@ -1,0 +1,61 @@
+---
+event: Appemergency
+Question: Consent Recommendation
+subquestion: |
+  ${ terminus.content } 
+  
+  Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ terminus.subject } 
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+event: Appadult
+Question: Consent Recommendation
+subquestion: |
+  ${ final.content }
+  
+  Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ final.subject }
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+event: AppMentalHealth
+Question: Consent Recommendation
+subquestion: |
+  ${ decisive.content }
+
+  Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ decisive.subject }
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+event: Appchild
+Question: Consent Recommendation
+subquestion: |
+  ${ ultimate.content }
+  
+  Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ ultimate.subject }
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+event: Appconsent
+Question: Consent Recommendation
+subquestion: |
+  ${ omega.content }
+  
+  Thank you for using the SAAS Consent Adviser.
+under: |
+  ${ omega.subject }
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---

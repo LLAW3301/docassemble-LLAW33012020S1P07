@@ -1,0 +1,94 @@
+---
+#this is the end screen for adult patient non emergency
+mandatory: true
+Question: Consent recommendation
+subquestion: |
+  It is recommended that you **${ final }**.
+  
+  
+  Thank you for using this consent app.
+buttons:
+  - "Restart": restart
+  - "Exit": exit
+---
+# these are the if statement for necessity of medical treatment continued
+
+mandatory: true
+code: |
+  if APNOnecessary:
+    final = 'go to another part of the app'
+  elif APNOover_18 and APNOsecond_opinion:
+    final = 'Administer treatment' 
+  elif APNOover_18 and APNOsecond_opinion:
+    final = 'Administer treatment' 
+  elif APNOover_18 and APNOsecondary_agree:
+   final = 'administer treatment'
+  elif APNOover_18:
+   final = 'do not administer treatment'
+  elif APNOtime and APNOsecond_opinion:
+    final = 'administer treatment'
+  elif APNOtime and APNOsecondary_agree:
+    final = 'administer treatment' 
+  elif APNOtime:
+    final = 'do not administer treatment'
+  elif APNOadvance_directive and APNOsecond_opinion:
+    final = 'administer treatment'
+  elif APNOadvance_directive and APNOsecondary_agree:
+    final = 'administer treatment'
+  elif APNOadvance_directive:
+    final = 'do not administer treatment'
+  elif APNOsubstitute_maker and APNOsubstitute_consent:
+    final = 'administer treatment'
+  elif APNOsubstitute_maker:
+    final = 'do not administer treatment'
+  elif APNOparent_guardian and APNOsubstitute_consent:
+    final = 'administer treatment'
+  elif APNOparent_guardian:
+    final = 'do not administer treatment'
+  elif APNOperson_responsible:
+    final = 'administer treatment'
+  elif APNOsubstitute_consent:
+    final = 'administer treatment'
+  else:
+    final = 'do not administer treatment'
+---
+# this question detemrines whether the treatment is necessary.
+question: Is the treatment necessary to preserve the life, health or well-being of the patient? 
+noyes: APNOnecessary
+---
+# this question determines whether the patient is 18 years and over.
+question: Is the patient 18 years or over? 
+noyes: APNOover_18
+---
+#this question determines whether if there is time to inquire about an ACD
+question: Does time permit a reasonable inquiry into whether the patient has an Advance Care Directive? 
+noyes: APNOtime
+---
+#this question askes whether the patient has an ACD
+question: Does the patient have an Advance Care Directive?  
+noyes: APNOadvance_directive
+---
+# this question asks if a SDM is available
+question: Does the Advance Care Directive appoint a Substitute Decision-Maker who is available to consent to the emergency treatment?
+yesno: APNOsubstitute_maker
+---
+# this question is asking if the SDM consents
+question: Do they consent? 
+yesno: APNOsubstitute_consent
+---
+# this question is asking if a parent or guardian available
+question: Is a parent or guardian available to consent to the emergency treatment? 
+yesno: APNOparent_guardian
+---
+#this quesiton is asking if there is a personal responsible available
+question: Is a Person Responsible available to consent to the emergency treatment?
+noyes: APNOperson_responsible
+---
+# this question is asking can you get a second opinion
+question: Is it practical to attain a secondary supporting opinion from a medical practitioner who has personally examined the patient as to the necessity of treatment? 
+noyes: APNOsecond_opinion
+---
+# this question is asking if the secondary MP agrees
+question: Does the opinion of the secondary practitioner agree to administer treatment?
+yesno: APNOsecondary_agree
+---

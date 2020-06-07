@@ -1,0 +1,59 @@
+.navbar{
+  background-color: rgb(0,160,80) !important;
+}
+
+.navbar .nav-item a{
+  color: rgb(0,0,0) !important;
+}
+
+.text-muted{
+  color: rgb(0,0,0) !important;
+}
+
+.btn-primary{
+  color: rgb(255,255,255);
+  background-color: rgb(0,160,80);
+  border-color: rgb(0,160,80);
+}
+
+.btn-primary:hover{
+  color: rgb(0,0,0);
+  background-color: rgb(0,160,80);
+  border-color: rgb(0,0,0);
+}
+
+.btn-secondary{
+  color: rgb(0,0,0);
+  background-color: rgb(204,204,204);
+  border-color: rgb(204,204,204);
+}
+
+.btn-secondary:hover{
+  color: rgb(255,255,255);
+  background-color: rgb(204,204,204);
+  border-color: rgb(0,0,0);
+}
+
+.btn-danger{
+  color: rgb(255,255,255);
+  background-color: rgb(237,23,76);
+  border-color: rgb(237,23,76);
+}
+
+.btn-danger:hover{
+  color: rgb(0,0,0);
+  background-color: rgb(237,23,76);
+  border-color: rgb(0,0,0);
+}
+
+.btn-warning{
+  color: rgb(255,255,255);
+  background-color: rgb(0,160,80);
+  border-color: rgb(0,160,80);
+}
+
+.btn-warning:hover{
+  color: rgb(0,0,0);
+  background-color: rgb(0,160,80);
+  border-color: rgb(0,0,0);
+}
