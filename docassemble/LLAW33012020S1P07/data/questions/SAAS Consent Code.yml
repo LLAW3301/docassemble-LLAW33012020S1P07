@@ -1,26 +1,18 @@
 ---
 mandatory: True
 code: |
-  if Patient_age == '16 or 17' and medrefuse:
-    AppMentalHealth
-  elif Patient_age == '18 or over' and medrefuse:
-    AppMentalHealth
-  elif Patient_age == '16 or 17' and APNOdecision.any_true() and APEnecessary:
+  if Patient_age == '16 or 17' and APNOdecision.any_true() and APEnecessary and medrefuse:
     Appemergency
-  elif Patient_age == '18 or over' and APNOdecision.any_true() and APEnecessary:
+  elif Patient_age == '18 or over' and APNOdecision.any_true() and APEnecessary and medrefuse:
     Appemergency
   elif Patient_age == '16 or 17' and APNOdecision.any_true():
     Appadult
   elif Patient_age == '18 or over' and APNOdecision.any_true():
     Appadult
-  elif Patient_age == '16 or 17' and MHConsent:
-    AppMentalHealth
-  elif Patient_age == '18 or over' and MHConsent:
-    AppMentalHealth
   elif Patient_age == '16 or 17':
-    Appconsent
+    AppMentalHealth
   elif Patient_age == '18 or over':
-    Appconsent
+    AppMentalHealth
   else:
     Appchild
 ---
@@ -41,7 +33,9 @@ code: |
     final = contact_sacat
 ---
 code: |
-  if MHIllness and MHHarm:
+  if MHConsent:
+    decisive = medical_treatment
+  elif MHIllness and MHHarm:
     decisive = paramedic_can
   elif MHIllness and MHRequire:
     decisive = paramedic_can

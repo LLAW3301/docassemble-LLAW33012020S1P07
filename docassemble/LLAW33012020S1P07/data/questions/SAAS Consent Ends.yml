@@ -1,6 +1,6 @@
 ---
 event: Appemergency
-Question: Consent recommendation
+Question: Consent Recommendation
 subquestion: |
   ${ terminus.content } 
   
@@ -12,7 +12,7 @@ buttons:
   - "Exit": exit
 ---
 event: Appadult
-Question: Consent recommendation
+Question: Consent Recommendation
 subquestion: |
   ${ final.content }
   
@@ -24,7 +24,7 @@ buttons:
   - "Exit": exit
 ---
 event: AppMentalHealth
-Question: Consent recommendation
+Question: Consent Recommendation
 subquestion: |
   ${ decisive.content }
 
@@ -36,7 +36,7 @@ buttons:
   - "Exit": exit
 ---
 event: Appchild
-Question: Consent recommendation
+Question: Consent Recommendation
 subquestion: |
   ${ ultimate.content }
   
@@ -48,7 +48,7 @@ buttons:
   - "Exit": exit
 ---
 event: Appconsent
-Question: Consent recommendation
+Question: Consent Recommendation
 subquestion: |
   ${ omega.content }
   

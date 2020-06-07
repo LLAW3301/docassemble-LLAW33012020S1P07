@@ -57,6 +57,10 @@ content: |
 ---
 template: medical_treatment_parent
 content: |
+  ***Disclaimer***
+  
+  The following recommendation is based on the assumption that paramedics are medical practitioners.
+  
   **It is recommended that you administer medical treatment.**
 subject: |  
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 12(a)
@@ -73,6 +77,10 @@ subject: |
 ---
 template: medical_treatment_child
 content: |
+  ***Disclaimer***
+  
+  The following recommendation is based on the assumption that paramedics are medical practitioners.
+  
   **It is recommended that you administer medical treatment.**
 subject: |  
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 12(b)

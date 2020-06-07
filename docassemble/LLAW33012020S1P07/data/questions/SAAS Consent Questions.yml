@@ -15,7 +15,7 @@ question: Is the patient under the age of 16?
 noyes: PatientAge
 ---
 question: Has the patient previously refused the medical treatment?
-yesno: medrefuse
+noyes: medrefuse
 ---
 question: Is the decision making ability of the patient impaired?
 Subquestion: |
@@ -58,7 +58,7 @@ fields:
       - Adult of Aboriginal or Torres Strait Islander descent, related to the patient according to Aboriginal or Torres Strait Islander kinship rules 
 ---
 question: Does the patient consent to the medical treatment?
-noyes: MHConsent
+yesno: MHConsent
 ---
 question: Does the patient appear to have a mental illness?
 subquestion: |
