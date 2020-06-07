@@ -1,4 +1,6 @@
 ---
+# These are the templates for the recommendations and citations that appear in the endpoints. The recommendations appear in the templates' 'content' and the citations appear in the templates' 'subject'. The 'subject' will appear below any relevant buttons.
+# The following templates are for the 'adult' section of the application.
 template: delay_treatment
 content: |
   **It is recommended that you delay treatment until the patient regains decision-making capacity.**
@@ -31,6 +33,7 @@ subject: |
   
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 14B(1)
 ---
+# The following templates are for the 'mental health' section of the application.
 template: paramedic_can
 content: |
   **A paramedic can:**
@@ -55,6 +58,7 @@ template: medical_treatment
 content: |
   **It is recommended that you administer medical treatment.**
 ---
+# The following templates are for the 'child' section of the application.
 template: medical_treatment_parent
 content: |
   ***Disclaimer***
@@ -85,6 +89,7 @@ content: |
 subject: |  
   *Consent to Medical Treatment and Palliative Care Act 1995* (SA) s 12(b)
 ---
+# The following templates are for the 'emergency' section of the application.
 template: medical_treatment_emergency1
 content: |
   **It is recommended that you administer medical treatment.**

@@ -1,4 +1,5 @@
 ---
+# This code block determines if the interview flow is filtered into the 'emergency', 'adult', 'mental health' or 'child' sections of the application depending on the answers to early interview questions.
 mandatory: True
 code: |
   if Patient_age == '16 or 17' and APNOdecision.any_true() and APEnecessary and medrefuse:
@@ -16,46 +17,8 @@ code: |
   else:
     Appchild
 ---
-code: | 
-  if APNOdelay:
-    final = delay_treatment
-  elif APNOACDdecision_maker:
-    final = sub_decision
-  elif APNOACDinstructions:
-    final = follow_acd
-  elif APNOperson_responsible.any_true():
-    final = responsible_consent
-  elif MHIllness and MHHarm:
-    final = paramedic_can
-  elif MHIllness and MHRequire:
-    final = paramedic_can
-  else: 
-    final = contact_sacat
----
-code: |
-  if MHConsent:
-    decisive = medical_treatment
-  elif MHIllness and MHHarm:
-    decisive = paramedic_can
-  elif MHIllness and MHRequire:
-    decisive = paramedic_can
-  else: 
-    decisive = no_treatment
----
-code: |
-  if CPParConsent:
-    ultimate = medical_treatment_parent
-  elif CPNecessity:
-    ultimate = medical_treatment_cpemergency
-  elif CPChildConsent and CPRisks and CPInterest and CPSecondOpinion:
-    ultimate = medical_treatment_child
-  elif MHIllness and MHHarm:
-    ultimate = paramedic_can
-  elif MHIllness and MHRequire:
-    ultimate = paramedic_can
-  else: 
-    ultimate = no_treatment
----
+# All of the following code blocks change the mako in the endpoints to reflect different templates, which provide the relevant recommendations and citations, depending on the answers given to the application.
+# This code block determines the interview flow for the 'emergency' section of the application.
 code: |
   if Patient_age == '16 or 17' and APEsecond_opinion:
     terminus = medical_treatment_emergency1
@@ -90,6 +53,46 @@ code: |
   else:
     terminus = no_treatment
 ---
+# This code block determines the interview flow for the 'adult' section of the application.
+code: | 
+  if APNOdelay:
+    final = delay_treatment
+  elif APNOACDdecision_maker:
+    final = sub_decision
+  elif APNOACDinstructions:
+    final = follow_acd
+  elif APNOperson_responsible.any_true():
+    final = responsible_consent
+  elif MHIllness and MHHarm:
+    final = paramedic_can
+  elif MHIllness and MHRequire:
+    final = paramedic_can
+  else: 
+    final = contact_sacat
+---
+# This code block determines the interview flow for the 'mental health' section of the application.
 code: |
-  omega = medical_treatment
+  if MHConsent:
+    decisive = medical_treatment
+  elif MHIllness and MHHarm:
+    decisive = paramedic_can
+  elif MHIllness and MHRequire:
+    decisive = paramedic_can
+  else: 
+    decisive = no_treatment
+---
+# This code block determines the interview flow for the 'child' section of the application.
+code: |
+  if CPParConsent:
+    ultimate = medical_treatment_parent
+  elif CPNecessity:
+    ultimate = medical_treatment_cpemergency
+  elif CPChildConsent and CPRisks and CPInterest and CPSecondOpinion:
+    ultimate = medical_treatment_child
+  elif MHIllness and MHHarm:
+    ultimate = paramedic_can
+  elif MHIllness and MHRequire:
+    ultimate = paramedic_can
+  else: 
+    ultimate = no_treatment
 ---

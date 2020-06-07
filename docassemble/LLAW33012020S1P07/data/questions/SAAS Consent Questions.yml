@@ -1,3 +1,6 @@
+---
+# These are the question blocks for the application.
+# The patient's age is asked first to determine what sections of the application will be relevant to the circumstances.
 question: What is the patient's age?
 field: Patient_age
 choices:
@@ -5,18 +8,7 @@ choices:
   - 16 or 17
   - 18 or over
 ---
-question: |
-  How many years old is the Patient?
-fields: 
-  - Age: patient_age
-    datatype: integer
----
-question: Is the patient under the age of 16?
-noyes: PatientAge
----
-question: Has the patient previously refused the medical treatment?
-noyes: medrefuse
----
+# The following questions are for the 'adult' section of the application.
 question: Is the decision making ability of the patient impaired?
 Subquestion: |
   Please select any of the following if they apply to the patient:
@@ -57,6 +49,7 @@ fields:
       - Adult charged with overseeing the day-to-day care of the person
       - Adult of Aboriginal or Torres Strait Islander descent, related to the patient according to Aboriginal or Torres Strait Islander kinship rules 
 ---
+# The following questions are for the 'mental health' section of the application.
 question: Does the patient consent to the medical treatment?
 yesno: MHConsent
 ---
@@ -89,6 +82,7 @@ yesno: MHHarm
 question: Does the patient otherwise require medical treatment?
 yesno: MHRequire
 ---
+# The following questions are for the 'child' section of the application.
 question: Does the parent or guardian of the child consent to the medical treatment?
 yesno: CPParConsent
 ---
@@ -107,11 +101,12 @@ yesno: CPInterest
 question: Are those opinions supported by the written opinion of at least one other medical practitioner, who personally examined the child before administering medical treatment?
 yesno: CPSecondOpinion
 ---
+# The following questions are for the 'emergency' section of the application.
 question: Is the medical treatment necessary to preserve the life, health or well-being of the patient? 
 yesno: APEnecessary
 ---
-question: Is the patient under the age of 18? 
-yesno: APEover_18
+question: Has the patient previously refused the medical treatment?
+noyes: medrefuse
 ---
 question: Does time permit a reasonable inquiry into whether the patient has an advance care directive? 
 noyes: APEtime
