@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 setup(name='docassemble.LLAW33012020S1P07',
       version='0.0.1',
       description=('A docassemble extension.'),
-      long_description='# Package P07',
+      long_description='# SAAS Consent Adviser\r\nThe SAAS Consent Adviser was developed by Flinders University law students in association with the South Australian Ambulance Service. It is meant to assist paramedics in navigating medical consent law to ensure that they know who to get medical consent from, and when they can administer medical treatment without consent. \r\n',
       long_description_content_type='text/markdown',
       author='Mark Ferraretto',
       author_email='mark.ferraretto@flinders.edu.au',
