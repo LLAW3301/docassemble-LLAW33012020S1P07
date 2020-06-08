@@ -8,6 +8,9 @@ metadata:
     - name: Luke Hanson
     - name: Melenie Jessel Gavara-Nanu
     - name: Samantha Thomas
+  organisation: Flinders University
+  show login: False
+  exit url: http://www.saambulance.com.au/
 ---
 # The following two blocks set the SA Health and SAAS logos at the top left of the screen. 
 objects:

@@ -117,14 +117,20 @@ noyes: APEadvance_directive
 question: Does the advance care directive appoint a substitute decision-maker, who is authorised to make decisions about the kind of medical treatment proposed and available to consent to the emergency treatment?
 yesno: APEsubstitute_maker
 ---
-question: Do they consent? 
+question: Does the substitute decision-maker consent? 
 yesno: APEsubstitute_consent
 ---
 question: Is a parent or guardian available to consent to the emergency treatment? 
 yesno: APEparent_guardian
 ---
-question: Is a Person Responsible available to consent to the emergency treatment?
+question: Does the parent or guardian consent? 
+yesno: APEparent_consent
+---
+question: Is a person responsible available to consent to the emergency treatment?
 noyes: APEperson_responsible
+---
+question: Does the person responsible consent? 
+yesno: APEresponsible_consent
 ---
 question: Is it practical to attain a secondary supporting opinion from a medical practitioner who has personally examined the patient as to the necessity of treatment? 
 noyes: APEsecond_opinion

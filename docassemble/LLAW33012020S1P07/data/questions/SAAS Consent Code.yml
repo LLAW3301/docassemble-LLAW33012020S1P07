@@ -25,33 +25,33 @@ code: |
   elif Patient_age == '16 or 17' and APEsecondary_agree:
    terminus = medical_treatment_emergency2
   elif Patient_age == '16 or 17':
-   terminus = no_treatment
+   terminus = no_treatment_emergency1
   elif APEtime and APEsecond_opinion:
     terminus = medical_treatment_emergency3
   elif APEtime and APEsecondary_agree:
     terminus = medical_treatment_emergency4
   elif APEtime:
-    terminus = no_treatment
+    terminus = no_treatment_emergency2
   elif APEadvance_directive and APEsecond_opinion:
     terminus = medical_treatment_emergency1
   elif APEadvance_directive and APEsecondary_agree:
     terminus = medical_treatment_emergency2
   elif APEadvance_directive:
-    terminus = no_treatment
+    terminus = no_treatment_emergency1
   elif APEsubstitute_maker and APEsubstitute_consent:
     terminus = medical_treatment_emergency5
   elif APEsubstitute_maker:
-    terminus = no_treatment
-  elif APEparent_guardian and APEsubstitute_consent:
+    terminus = no_treatment_emergency3
+  elif APEparent_guardian and APEparent_consent:
     terminus = medical_treatment_emergency6
   elif APEparent_guardian:
-    terminus = no_treatment
+    terminus = no_treatment_emergency4
   elif APEperson_responsible:
     terminus = follow_acd
-  elif APEsubstitute_consent:
+  elif APEresponsible_consent:
     terminus = medical_treatment_emergency7
   else:
-    terminus = no_treatment
+    terminus = no_treatment_emergency5
 ---
 # This code block determines the interview flow for the 'adult' section of the application.
 code: | 
@@ -79,7 +79,7 @@ code: |
   elif MHIllness and MHRequire:
     decisive = paramedic_can
   else: 
-    decisive = no_treatment
+    decisive = no_treatment_mentalhealth
 ---
 # This code block determines the interview flow for the 'child' section of the application.
 code: |
@@ -94,5 +94,5 @@ code: |
   elif MHIllness and MHRequire:
     ultimate = paramedic_can
   else: 
-    ultimate = no_treatment
+    ultimate = no_treatment_child
 ---
